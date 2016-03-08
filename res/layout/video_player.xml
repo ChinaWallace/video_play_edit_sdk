@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<org.libsdl.app.SDLSurfaceView 
+	    android:id="@+id/id_video_sdlsurface"
+	    android:layout_width="480dip"
+	    android:layout_height="300dip"
+	    android:layout_marginTop="30dip"/>
+	
+	<LinearLayout
+	    android:id="@+id/id_video_play_ctrllayout"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical">
+	
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+   			 android:gravity="center_horizontal">
+	        
+	         <Button
+		        android:id="@+id/id_btnstart"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="start" />
+		
+		    <Button
+		        android:id="@+id/id_btnpause"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="pause" />
+		
+		    <Button
+		        android:id="@+id/id_btnplay"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="play" />
+		
+		    <Button
+		        android:id="@+id/id_btnstop"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="stop" />
+	    </LinearLayout>
+	    
+	     <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal"
+    		android:gravity="center_horizontal">
+	          <Button
+		        android:id="@+id/id_btnback100ms"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="-100ms" />
+		  	<Button
+		        android:id="@+id/id_btnfront100ms"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="+100ms" />
+	    </LinearLayout>
+	</LinearLayout>
+	<View 
+	    android:layout_width="match_parent"
+	    android:layout_height="1dp"
+	    android:background="#FF0000"/>
+	
+	<ScrollView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    >
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical">
+	        
+	        
+	        <Button
+	    android:id="@+id/id_do_ffmpeg_cmd"
+	    android:layout_width="match_parent"
+	    android:layout_height="60dip"
+	    android:text="执行ffmpeg的命令"
+	    android:layout_marginLeft="5dip"
+	    android:layout_marginRight="5dip"
+	    android:layout_gravity="center_horizontal"/>
+	<TextView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="执行的命令是:\n./ffmpeg -i /sdcard/2x.mp4 -vf format=gray -vcodec libx264 -strict -2 -y /sdcard/demo_gray.mp4"
+	    android:textColor="#00FF00"/>
+	<TextView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="说明"
+	   android:textStyle="bold"
+	   android:textSize="20sp"/>
+	
+	<TextView 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:text="执行完后,当前直接自动退出,因ffmpeg.c一字未变导致.您可以看下ffmpeg.c这个ffmpeg的源代码是怎样退出的.更多代码一直在优化中... 详情可联系我们QQ1852600324"
+	   android:textSize="18sp"
+	   android:textColor="#ff0000"/>
+		
+	
+	
+	        
+	    </LinearLayout>
+	</ScrollView>
+	
+</LinearLayout>
