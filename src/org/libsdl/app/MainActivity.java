@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
 	{
 		new AlertDialog.Builder(this)
 		.setTitle("提示")
-		.setMessage("注意:我们深入优化ffmpeg中的视频硬件解码,视频硬件编码, 您可以使用ffmpeg库的所有命令,如果指定使用硬件codec.请看此app的源代码.QQ1852600324 .")
+		.setMessage("注意:我们深入优化ffmpeg中的视频硬件解码,视频硬件编码, 您可以使用ffmpeg库的所有命令,如果指定使用硬件codec.请看SDLActivity.java代码.QQ1852600324 .")
         .setPositiveButton(android.R.string.ok, null)
         .show();
 	}
