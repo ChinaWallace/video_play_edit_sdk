@@ -17,4 +17,10 @@
 ####调用流程
 *  java-->loadLibrary(加载库)-->调用native的C语言函数来实现.
 *  java层演示代码详见:https://github.com/LanSoSdk/video_play_edit_sdk.
+
+****
+###联系我们
+*  QQ1852600324
+*  Email:support@lansongtech.com
+=======
   	 
