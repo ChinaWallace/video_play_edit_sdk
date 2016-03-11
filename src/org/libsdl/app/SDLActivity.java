@@ -117,7 +117,6 @@ public class SDLActivity extends Activity implements OnClickListener,  OnComplet
 	    findViewById(R.id.id_btnstop).setOnClickListener(this);
 	    findViewById(R.id.id_btnback100ms).setOnClickListener(this);
 	    findViewById(R.id.id_btnfront100ms).setOnClickListener(this);
-
 	    findViewById(R.id.id_do_ffmpeg_cmd).setOnClickListener(this);
 	
     }
@@ -176,23 +175,7 @@ public class SDLActivity extends Activity implements OnClickListener,  OnComplet
 					SDLActivity.videoSeekFront100Ms();
 				break;
 			case R.id.id_do_ffmpeg_cmd:
-					List<String> cmdList=new ArrayList<String>();
-					cmdList.add("-i");
-					cmdList.add(videoPath);
-					cmdList.add("-vf");
-					cmdList.add("format=gray");
-					cmdList.add("-vcodec");
-					cmdList.add("lansoh264_enc");
-					cmdList.add("-strict");
-					cmdList.add("-2");
-					cmdList.add("-y");
-					cmdList.add("/sdcard/demo_gray.mp4");
-				  String[] command=new String[cmdList.size()];  
-         	     for(int i=0;i<cmdList.size();i++){  
-         	    	 command[i]=(String)cmdList.get(i);  
-         	     }  
- 				SDLActivity.executeVideoEdit(command);
-				//./ffmpeg -i fashion1.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate1.ts
+				startEncoderDemo();
 				break;
 			default:
 				break;
@@ -201,22 +184,28 @@ public class SDLActivity extends Activity implements OnClickListener,  OnComplet
     public void testCmd()
     {
     	 SDLActivity.startVideoPlay();
-//    	List<String> cmdList=new ArrayList<String>();
-//		cmdList.add("-i");
-//		cmdList.add("/sdcard/tenSecond.mp4");
-//		cmdList.add("-vf");
-//		cmdList.add("format=gray");
-//		cmdList.add("-vcodec");
-//		cmdList.add("lansoh264_enc");
-//		cmdList.add("-strict");
-//		cmdList.add("-2");
-//		cmdList.add("-y");
-//		cmdList.add("/sdcard/demo_gray66.mp4");
-//		String[] command=new String[cmdList.size()];  
-//	     for(int i=0;i<cmdList.size();i++){  
-//	    	 command[i]=(String)cmdList.get(i);  
-//	     }  
-//		SDLActivity.executeVideoEdit(command);
+    	 //startEncoderDemo();
+    }
+    private void startEncoderDemo()
+    {
+    	List<String> cmdList=new ArrayList<String>();
+    	cmdList.add("-vcodec");
+		cmdList.add("lansoh264_dec");
+		cmdList.add("-i");
+		cmdList.add(videoPath);
+		cmdList.add("-vf");
+		cmdList.add("format=gray");
+		cmdList.add("-vcodec");
+		cmdList.add("lansoh264_enc");
+		cmdList.add("-strict");
+		cmdList.add("-2");
+		cmdList.add("-y");
+		cmdList.add("/sdcard/demo_gray2.mp4");
+		String[] command=new String[cmdList.size()];  
+	     for(int i=0;i<cmdList.size();i++){  
+	    	 command[i]=(String)cmdList.get(i);  
+	     }  
+		SDLActivity.executeVideoEdit(command);
     }
 
     @Override
