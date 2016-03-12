@@ -17,4 +17,5 @@ QQ  1852600324
 
 邮件  support@lansongtech.com
 
+下载地址 https://github.com/LanSoSdk/video_play_edit_sdk
   	 
