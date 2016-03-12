@@ -7,7 +7,7 @@
 ###兼容完整的ffmpeg命令,调用非常简单
 
 *  只有一个方法: VideoEditor executeVideoEditor(String[] command);//传入的是ffmpeg的命令字符串.
-*  举例详见见VideoEditDemoActivity.java
+*  举例详见VideoEditDemoActivity.java
 
 ****
 ###联系我们
