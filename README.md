@@ -8,13 +8,12 @@
 
 *  只有一个方法: VideoEditor executeVideoEditor(String[] command);//传入的是ffmpeg的命令字符串.
 *  举例详见VideoEditDemoActivity.java
-*  
+
 
 **此SDK对个人免费,如商用或需要我们技术支持,定制各种功能需求开发, 收取稍许费用**
 
 ###联系我们
-*  QQ1852600324
-  Email:support@lansongtech.com
-  =======
+QQ  1852600324
+邮件  support@lansongtech.com
 
   	 
