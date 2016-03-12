@@ -10,16 +10,16 @@
 *  举例如下(见VideoEditDemoActivity.java):
 
 	 private void demoVideoGray()
-		  {
-			  List<String> cmdList=new ArrayList<String>();
-		   	cmdList.add("-vcodec");
-		   	cmdList.add("lansoh264_dec");  //使用我们的硬解码加速
-				cmdList.add("-i");
-				cmdList.add(videoPath);
-				cmdList.add("-vf");
-				cmdList.add("format=gray");
-				cmdList.add("-vcodec");
-				cmdList.add("lansoh264_enc"); //使用我们的硬编码加速
+	 {
+		 List<String> cmdList=new ArrayList<String>();
+		cmdList.add("-vcodec");
+		cmdList.add("lansoh264_dec");  //使用我们的硬解码加速
+		cmdList.add("-i");
+		cmdList.add(videoPath);
+		cmdList.add("-vf");
+		cmdList.add("format=gray");
+		cmdList.add("-vcodec");
+		cmdList.add("lansoh264_enc"); //使用我们的硬编码加速
 				cmdList.add("-strict");
 				cmdList.add("-2");
 				cmdList.add("-y");
