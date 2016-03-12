@@ -10,8 +10,8 @@
 *  举例详见VideoEditDemoActivity.java
 *  
 
-**此SDK对个人免费,如商用或需要我们技术支持,定制各种开放, 收取稍许费用**
-****
+**此SDK对个人免费,如商用或需要我们技术支持,定制各种功能需求开发, 收取稍许费用**
+
 ###联系我们
 *  QQ1852600324
   Email:support@lansongtech.com
