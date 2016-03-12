@@ -23,7 +23,7 @@ import com.example.videoeditordemo.R;
 public class VideoEditDemoActivity extends Activity{
 
 	String videoPath=null;
-	IjkMediaPlayer ijkMediaPlayer = new IjkMediaPlayer();
+	VideoEditor mVideoEditor = new VideoEditor();
 	ProgressDialog  mProgressDialog;
 	int videoDuration;
 	  @Override
@@ -100,24 +100,7 @@ public class VideoEditDemoActivity extends Activity{
       	    @Override
       	    protected synchronized Boolean doInBackground(Object... params) {
       	    	// TODO Auto-generated method stub
-      	    	List<String> cmdList=new ArrayList<String>();
-		    	cmdList.add("-vcodec");
-		    	cmdList.add("lansoh264_dec");
-				cmdList.add("-i");
-				cmdList.add(videoPath);
-				cmdList.add("-vf");
-				cmdList.add("format=gray");
-				cmdList.add("-vcodec");
-				cmdList.add("lansoh264_enc");
-				cmdList.add("-strict");
-				cmdList.add("-2");
-				cmdList.add("-y");
-				cmdList.add("/sdcard/video_demo_gray.mp4");
-				String[] command=new String[cmdList.size()];  
-			     for(int i=0;i<cmdList.size();i++){  
-			    	 command[i]=(String)cmdList.get(i);  
-			     }  
-				ijkMediaPlayer.executeVideoEditor(command);
+      	    	demoVideoGray();
       	    	return null;
       	    }
     	@Override
@@ -129,6 +112,27 @@ public class VideoEditDemoActivity extends Activity{
 	       		 mProgressDialog=null;
     		}
     	}
-    }	
+    }
+	  private void demoVideoGray()
+	  {
+		  List<String> cmdList=new ArrayList<String>();
+	    	cmdList.add("-vcodec");
+	    	cmdList.add("lansoh264_dec");  //使用我们的硬解码加速
+			cmdList.add("-i");
+			cmdList.add(videoPath);
+			cmdList.add("-vf");
+			cmdList.add("format=gray");
+			cmdList.add("-vcodec");
+			cmdList.add("lansoh264_enc"); //使用我们的硬编码加速
+			cmdList.add("-strict");
+			cmdList.add("-2");
+			cmdList.add("-y");
+			cmdList.add("/sdcard/video_demo_gray.mp4");
+			String[] command=new String[cmdList.size()];  
+		     for(int i=0;i<cmdList.size();i++){  
+		    	 command[i]=(String)cmdList.get(i);  
+		     }  
+		     mVideoEditor.executeVideoEditor(command);
+	  }
 }
 
