@@ -50,5 +50,5 @@ QQ  1852600324
 - 硬编码器lansoh265_enc
 - 音频编码器libmp3lame
 
-####更多ffmpeg的命令，大家可以参考https://ffmpeg.org/documentation.html来获取。
+####更多ffmpeg的命令，大家可以参考 https://ffmpeg.org/documentation.html 来获取。
   	 
